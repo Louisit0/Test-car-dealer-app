@@ -4,18 +4,18 @@ This project is a web application that allows users to search and view results f
 
 ## Key Features
 
-Vehicle Filter: Allows users to select a vehicle make and model year.
-Dynamic Search: Uses selected parameters to search for specific vehicle models.
-Results Display: Shows a list of vehicle models matching the search criteria.
-Error Handling: Provides feedback to the user in case of search issues or if no results are found.
-Responsive Design: Adapts to different screen sizes (mobile, tablet, desktop).
+- Vehicle Filter: Allows users to select a vehicle make and model year.
+- Dynamic Search: Uses selected parameters to search for specific vehicle models.
+- Results Display: Shows a list of vehicle models matching the search criteria.
+- Error Handling: Provides feedback to the user in case of search issues or if no results are found.
+- Responsive Design: Adapts to different screen sizes (mobile, tablet, desktop).
 
 ## Architecture
 ### Frontend
 
-Framework: Next.js (App Router)
-Language: JavaScript/React
-Styling: Tailwind CSS
+- Framework: Next.js (App Router)
+- Language: JavaScript/React
+- Styling: Tailwind CSS
 
 ### File Structure
 Copyapp/
@@ -28,8 +28,8 @@ Copyapp/
     
 ## Main Components
 
-Filter: Client-side component for make and year selection.
-ResultPage: Server-side component to display search results.
+- Filter: Client-side component for make and year selection.
+- ResultPage: Server-side component to display search results.
 
 ## Routes
 
@@ -39,34 +39,34 @@ ResultPage: Server-side component to display search results.
 ## API Integration
 
 Uses the NHTSA (National Highway Traffic Safety Administration) API to fetch vehicle data.
-Endpoints used:
+### Endpoints used:
 
-Get vehicle makes: https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car
-Get models by make and year: https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeIdYear/makeId/${makeId}/modelyear/${year}
+- Get vehicle makes: https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car
+- Get models by make and year: https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeIdYear/makeId/${makeId}/modelyear/${year}
 
 
 ## Technical Features
 
-Static Parameter Generation: Uses generateStaticParams to pre-render common make and year combinations.
-Server-Side Rendering: The results page is rendered on the server to improve SEO and initial performance.
-Client-Side Navigation: Uses useRouter for navigation between pages without full reloads.
-State Management: Uses React hooks (useState, useEffect) to manage local state and side effects.
-Input Validation: Disables the search button until both make and year are selected.
+- Static Parameter Generation: Uses generateStaticParams to pre-render common make and year combinations.
+- Server-Side Rendering: The results page is rendered on the server to improve SEO and initial performance.
+- Client-Side Navigation: Uses useRouter for navigation between pages without full reloads.
+- State Management: Uses React hooks (useState, useEffect) to manage local state and side effects.
+- Input Validation: Disables the search button until both make and year are selected.
 
 ## Application Flow
 
-The user selects a vehicle make and year on the main page.
-Clicking "Next" navigates to the results page with the selected parameters.
-The results page fetches data from the NHTSA API and displays the corresponding models.
-If no models are found or there's an error, an appropriate message is shown to the user.
+- The user selects a vehicle make and year on the main page.
+- Clicking "Next" navigates to the results page with the selected parameters.
+- The results page fetches data from the NHTSA API and displays the corresponding models.
+- If no models are found or there's an error, an appropriate message is shown to the user.
 
 ## Potential Areas for Improvement
 
-Implement result caching to improve performance.
-Add pagination to handle large result sets.
-Implement unit and integration tests.
-Add more filters (such as vehicle type, specific features, etc.).
-Improve UI accessibility.
+- Implement result caching to improve performance.
+- Add pagination to handle large result sets.
+- Implement unit and integration tests.
+- Add more filters (such as vehicle type, specific features, etc.).
+- Improve UI accessibility.
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
