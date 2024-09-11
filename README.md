@@ -1,9 +1,8 @@
-# Test car dealer app
+# Car dealer app
 
 This project is a web application that allows users to search and view results for vehicles by make and year.
 
-Vehicle Search Application
-Key Features
+## Key Features
 
 Vehicle Filter: Allows users to select a vehicle make and model year.
 Dynamic Search: Uses selected parameters to search for specific vehicle models.
@@ -11,14 +10,14 @@ Results Display: Shows a list of vehicle models matching the search criteria.
 Error Handling: Provides feedback to the user in case of search issues or if no results are found.
 Responsive Design: Adapts to different screen sizes (mobile, tablet, desktop).
 
-Architecture
-Frontend
+## Architecture
+### Frontend
 
 Framework: Next.js (App Router)
 Language: JavaScript/React
 Styling: Tailwind CSS
 
-File Structure
+### File Structure
 Copyapp/
   results/
     [makeId]/
@@ -26,17 +25,18 @@ Copyapp/
         page.js
   components/
     Filter.js
-Main Components
+    
+## Main Components
 
 Filter: Client-side component for make and year selection.
 ResultPage: Server-side component to display search results.
 
-Routes
+## Routes
 
 /: Main page with the filter component
 /results/[makeId]/[year]: Dynamic results page
 
-API Integration
+## API Integration
 
 Uses the NHTSA (National Highway Traffic Safety Administration) API to fetch vehicle data.
 Endpoints used:
@@ -45,8 +45,7 @@ Get vehicle makes: https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleTyp
 Get models by make and year: https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeIdYear/makeId/${makeId}/modelyear/${year}
 
 
-
-Technical Features
+## Technical Features
 
 Static Parameter Generation: Uses generateStaticParams to pre-render common make and year combinations.
 Server-Side Rendering: The results page is rendered on the server to improve SEO and initial performance.
@@ -54,14 +53,14 @@ Client-Side Navigation: Uses useRouter for navigation between pages without full
 State Management: Uses React hooks (useState, useEffect) to manage local state and side effects.
 Input Validation: Disables the search button until both make and year are selected.
 
-Application Flow
+## Application Flow
 
 The user selects a vehicle make and year on the main page.
 Clicking "Next" navigates to the results page with the selected parameters.
 The results page fetches data from the NHTSA API and displays the corresponding models.
 If no models are found or there's an error, an appropriate message is shown to the user.
 
-Potential Areas for Improvement
+## Potential Areas for Improvement
 
 Implement result caching to improve performance.
 Add pagination to handle large result sets.
